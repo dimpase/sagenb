@@ -43,10 +43,19 @@ defaults = {'word_wrap_cols':72,
             'recaptcha_private_key':'',
             'default_language': 'en_US',
             'model_version': 0,
+
+            'auth_ldap':False,
+            'ldap_uri':'ldap://example.net:389/',
+            'ldap_basedn':'ou=users,dc=example,dc=net',
+            'ldap_binddn':'cn=manager,dc=example,dc=net',
+            'ldap_bindpw': 'secret',
+            'ldap_username_attrib': 'cn',
+            'ldap_lookup_attribs':['cn', 'sn', 'givenName', 'mail'],
             }
 
 G_APPEARANCE = lazy_gettext('Appearance')
 G_AUTH = lazy_gettext('Authentication')
+G_LDAP = 'LDAP'
 G_SERVER = lazy_gettext('Server')
 
 defaults_descriptions = {
@@ -181,7 +190,49 @@ defaults_descriptions = {
         DESC : lazy_gettext('Model Version'),
         GROUP : G_SERVER,
         TYPE : T_INFO,
-        }
+        },
+    'auth_ldap': {
+        POS : 1,
+        DESC : 'Enable LDAP Authentication',
+        GROUP : G_LDAP,
+        TYPE : T_BOOL,
+        },
+    'ldap_uri': {
+        POS : 2,
+        DESC : 'LDAP URI',
+        GROUP : G_LDAP,
+        TYPE : T_STRING,
+        },
+    'ldap_binddn': {
+        POS : 3,
+        DESC : 'Bind DN',
+        GROUP : G_LDAP,
+        TYPE : T_STRING,
+        },
+    'ldap_bindpw': {
+        POS : 4,
+        DESC : 'Bind Password',
+        GROUP : G_LDAP,
+        TYPE : T_STRING,
+        },
+    'ldap_basedn': {
+        POS : 5,
+        DESC : 'Base DN',
+        GROUP : G_LDAP,
+        TYPE : T_STRING,
+        },
+    'ldap_username_attrib': {
+        POS : 6,
+        DESC: 'Username Attribute (i.e. cn, uid or userPrincipalName)',
+        GROUP : G_LDAP,
+        TYPE : T_STRING,
+        },
+    'ldap_lookup_attribs': {
+        POS : 7,
+        DESC: 'Attributes for user lookup',
+        GROUP : G_LDAP,
+        TYPE : T_LIST,
+        },
 }
 
 
