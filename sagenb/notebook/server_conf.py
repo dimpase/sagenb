@@ -103,7 +103,7 @@ defaults_descriptions = {
         },
 
     'pub_interact': {
-        DESC : 'Enable published interacts (EXPERIMENTAL; USE AT YOUR OWN RISK)',
+        DESC : lazy_gettext('Enable published interacts (EXPERIMENTAL; USE AT YOUR OWN RISK)'),
         GROUP : G_SERVER,
         TYPE : T_BOOL,
         },
@@ -193,7 +193,7 @@ defaults_descriptions = {
         },
     'auth_ldap': {
         POS : 1,
-        DESC : 'Enable LDAP Authentication',
+        DESC : lazy_gettext('Enable LDAP Authentication'),
         GROUP : G_LDAP,
         TYPE : T_BOOL,
         },
@@ -205,31 +205,31 @@ defaults_descriptions = {
         },
     'ldap_binddn': {
         POS : 3,
-        DESC : 'Bind DN',
+        DESC : lazy_gettext('Bind DN'),
         GROUP : G_LDAP,
         TYPE : T_STRING,
         },
     'ldap_bindpw': {
         POS : 4,
-        DESC : 'Bind Password',
+        DESC : lazy_gettext('Bind Password'),
         GROUP : G_LDAP,
         TYPE : T_STRING,
         },
     'ldap_basedn': {
         POS : 5,
-        DESC : 'Base DN',
+        DESC : lazy_gettext('Base DN'),
         GROUP : G_LDAP,
         TYPE : T_STRING,
         },
     'ldap_username_attrib': {
         POS : 6,
-        DESC: 'Username Attribute (i.e. cn, uid or userPrincipalName)',
+        DESC: lazy_gettext('Username Attribute (i.e. cn, uid or userPrincipalName)'),
         GROUP : G_LDAP,
         TYPE : T_STRING,
         },
     'ldap_lookup_attribs': {
         POS : 7,
-        DESC: 'Attributes for user lookup',
+        DESC: lazy_gettext('Attributes for user lookup'),
         GROUP : G_LDAP,
         TYPE : T_LIST,
         },
