@@ -704,11 +704,12 @@ class LdapAuth(AuthMethod):
         return result
         
     def _get_ldapuser(self, username, attrlist=None):
-        # only alphanumeric ascii usernames allowed
+        # only ascii usernames allowed
         try:
+            import re
             username.decode('ascii')
-            assert(username.isalnum())
-        except:
+            assert(re.match('[a-zA-Z0-9\.\-_@]+', username))
+        except AssertionError, UnicodeDecodeError:
             return None
 
         result = self._ldap_search("(%s=%s)" % (self._conf['ldap_username_attrib'], username), attrlist)
