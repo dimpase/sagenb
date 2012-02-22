@@ -320,7 +320,7 @@ def notebook_twisted(self,
         s = nb.create_user_with_same_password('admin', 'root')
         # It would be a security risk to leave an escalated account around.
 
-    if not nb.user_manager().user_exists('admin'):
+    if not auth_ldap and not nb.user_manager().user_exists('admin'):
         reset = True
         
     if reset:
