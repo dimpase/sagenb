@@ -697,10 +697,10 @@ class LdapAuth(AuthMethod):
         except: 
             raise ValueError, "invalid LDAP credentials"
 
-        # convert query and attrlist to ascii
+        # convert query and attrlist to utf8, non-ascii login usernames filtered at this moment
         from unicodedata import normalize
-        attrlist = [normalize("NFKD", unicode(x)).encode('ascii', 'ignore') for x in attrlist] if attrlist is not None else None
-        query = normalize("NFKD", unicode(query)).encode('ascii', 'ignore')
+        attrlist = [normalize("NFKD", unicode(x)).encode('utf8', 'ignore') for x in attrlist] if attrlist is not None else None
+        query = normalize("NFKD", unicode(query)).encode('utf8', 'ignore')
 
         result = conn.search_s(self._conf['ldap_basedn'], ldap.SCOPE_SUBTREE, query, attrlist)
         conn.unbind_s()
