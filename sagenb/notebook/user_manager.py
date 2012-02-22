@@ -591,6 +591,9 @@ class ExtAuthUserManager(OpenIDUserManager):
         self._auth_methods = { 
                     'auth_ldap': LdapAuth(self._conf),
                     }
+        self.add_user('pub', '', '', account_type='user', force=True)
+        self.add_user('_sage_', '', '', account_type='user', force=True)
+        self.add_user('guest', '', '', account_type='guest', force=True)
 
     def _user(self, username):
         # check all auth methods that are enabled in the notebook's config
