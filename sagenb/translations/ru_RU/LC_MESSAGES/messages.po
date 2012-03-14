@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  sagenb\n"
 "Report-Msgid-Bugs-To: <github.com/podshumok>\n"
-"POT-Creation-Date: 2012-03-14 07:46+0400\n"
+"POT-Creation-Date: 2012-03-14 08:07+0400\n"
 "PO-Revision-Date: 2011-06-13 12:55-0800\n"
 "Last-Translator: Konstantin Podshumok <github.com/podshumok>\n"
 "Language-Team: ru_RU <LL@li.org>\n"
@@ -13,6 +13,214 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+
+#: ../flask_version/admin.py:67
+#, python-format
+msgid ""
+"The temporary password for the new user <em>%(username)s</em> is "
+"<em>%(password)s</em>"
+msgstr ""
+"Временный пароль для нового пользователя <em>%(username)s</em>:"
+"<em>%(password)s</em>"
+
+#: ../flask_version/admin.py:69
+msgid "New User"
+msgstr "Новый пользователь"
+
+#: ../flask_version/authentication.py:258
+msgid "The confirmation system is not active."
+msgstr "Система подтверждения не активна."
+
+#: ../flask_version/authentication.py:261
+msgid ""
+"    <h1>Invalid confirmation key</h1>\n"
+"    <p>You are reporting a confirmation key that has not been assigned by"
+" this\n"
+"    server. Please <a href=\"/register\">register</a> with the "
+"server.</p>\n"
+"    "
+msgstr ""
+"<h1>Неверный код подтверждения</h1>\n<p>Вы сообщили ключ подтверждения,\n"
+"который не связан с этим сервером.\nПожалуйста, <a href=\"/register\">зарегистрируйтесь</a> на этом сервере.</p>"
+
+#: ../flask_version/authentication.py:272
+#, python-format
+msgid "<h1>Email address confirmed for user %(username)s</h1>"
+msgstr "<h1>Электронный адрес подтверждён для пользователя %(username)s</h1>"
+
+#: ../flask_version/authentication.py:274
+msgid "Email Confirmed"
+msgstr "E-mail подтверждён"
+
+#: ../flask_version/base.py:226
+#: ../sagenb/data/sage/html/base_authenticated.html:15
+msgid "Log"
+msgstr "История"
+
+#: ../flask_version/decorators.py:35
+#, python-format
+msgid "You do not have permission to access this location"
+msgstr "У вас нет прав для доступа к этой странице"
+
+#: ../flask_version/worksheet.py:27 ../flask_version/worksheet.py:36
+#: ../flask_version/worksheet_listing.py:195
+msgid "You do not have permission to access this worksheet"
+msgstr "У вас нет прав для доступа к этому рабочему листу"
+
+#: ../flask_version/worksheet.py:75 ../flask_version/worksheet.py:951
+#: ../sagenb/data/sage/html/notebook/worksheet_page.html:28
+#: ../sagenb/notebook/misc.py:237 ../sagenb/notebook/worksheet.py:703
+#: ../sagenb/notebook/worksheet.py:723 ../sagenb/notebook/worksheet.py:4230
+msgid "Untitled"
+msgstr "Безымянный"
+
+#: ../flask_version/worksheet.py:578
+msgid "Error: can't add more than 500 collaborators at a time"
+msgstr "Ошибка: нельзя добавить более 500 соавторов за один раз"
+
+#: ../flask_version/worksheet.py:631
+#: ../sagenb/data/sage/html/error_message.html:4
+#: ../sagenb/data/sage/html/login.html:69
+#: ../sagenb/data/sage/html/login.html:76
+#: ../sagenb/data/sage/html/login.html:104
+#: ../sagenb/data/sage/html/login.html:106
+#: ../sagenb/data/sage/html/recaptcha.html:27
+#: ../sagenb/data/sage/html/test_report.html:112
+#: ../sagenb/data/sage/html/test_report.html:131
+#: ../sagenb/data/sage/html/settings/admin_add_user.html:17
+#: ../sagenb/data/sage/html/settings/admin_add_user.html:19
+#: ../sagenb/data/sage/js/translated-messages.js:17
+msgid "Error"
+msgstr "Ошибка"
+
+#: ../flask_version/worksheet.py:661
+msgid "No data files"
+msgstr "Нет файлов данных"
+
+#: ../flask_version/worksheet.py:702
+msgid "illegal link attempt!"
+msgstr ""
+
+#: ../flask_version/worksheet.py:704
+msgid ""
+"The data filename already exists in other worksheet\n"
+"Delete the file in the other worksheet before creating a link."
+msgstr ""
+"Файл данных с таким именем уже существует в рабочем листе \n"
+"Удалите файл в другом рабочем листе, прежде чем создавать связанную копию."
+
+#: ../flask_version/worksheet.py:720
+#, python-format
+msgid ""
+" Return to <a href=\"%(upload_url)s\" title=\"Upload or create a data "
+"file in a wide range of formats\"><strong>Upload or Create Data "
+"File</strong></a> or <a href=\"%(worksheet_url)s\" title=\"Interactively "
+"use the worksheet\"><strong>%(worksheet_name)s</strong></a>."
+msgstr ""
+"Вернуться к <a href=\"%(upload_url)s\" title=\"Загрузить или создать файл данных в "
+"одном из многочисленных поддерживаемых форматах\"><strong>Загрузить или "
+"создать файл данных</strong></a> или  <a href=\"%(worksheet_url)s\" title=\"Интерактивно "
+"использовать рабочий лист\"><strong>%(worksheet_name)s</strong></a>."
+
+#: ../flask_version/worksheet.py:724
+#, python-format
+msgid "Error uploading file (missing field \"file\"). %(backlinks)s"
+msgstr "Ошибка при загрузке файла (отсутствует файл fileField). %(backlinks)s"
+
+#: ../flask_version/worksheet.py:731
+#, python-format
+msgid "Error uploading file (missing %(field)s arg).%(backlinks)s"
+msgstr "Ошибка при загрузке файла (отсутствует аргумент %(field)s). %(backlinks)s"
+
+#: ../flask_version/worksheet.py:744
+#, python-format
+msgid "Error uploading file (missing filename).%(backlinks)s"
+msgstr "Ошибка при загрузке файла (отсутствует имя файла). %(backlinks)s"
+
+#: ../flask_version/worksheet.py:752
+#, python-format
+msgid "URL must start with http, https, or ftp.%(backlinks)s"
+msgstr "URL должен начинаться с http, https, или ftp. %(backlinks)s"
+
+#: ../flask_version/worksheet.py:759
+#, python-format
+msgid ""
+"Suspicious filename \"%(filename)s\" encountered uploading "
+"file.%(backlinks)s"
+msgstr "Подозрительное имя файла \"%(filename)s\" обнаружено при загрузке файла. %(backlinks)s"
+
+#: ../flask_version/worksheet.py:874
+msgid "No such worksheet."
+msgstr "Запрошенный рабочий лист не найден."
+
+#: ../flask_version/worksheet.py:959
+msgid "Document does not exist."
+msgstr "Документ не существует"
+
+#: ../flask_version/worksheet_listing.py:57
+msgid "Error displaying worksheet listing."
+msgstr "Ошибка при отображении списка рабочих листов"
+
+#: ../flask_version/worksheet_listing.py:176
+msgid "Requested public worksheet does not exist"
+msgstr "Запрошеный опубликованный рабочий лист не существует"
+
+#: ../flask_version/worksheet_listing.py:295
+#, python-format
+msgid ""
+"This Sage notebook is not configured to load worksheets from 'https' "
+"URLs. Try a different URL or download the worksheet and upload it "
+"directly from your computer.\n"
+"%(backlinks)s"
+msgstr ""
+"Этот сервер Sage Notebook не настроен для загрузки рабочих листов из URL, начинающихся с 'https'."
+"Попробуйте другой URL или скачайте файл рабочего листа, а потом загрузите его "
+"непосредственно со своего компьютера.\n"
+"%(backlinks)s"
+
+#: ../flask_version/worksheet_listing.py:357
+msgid ""
+"Return to <a href=\"/upload\" title=\"Upload a worksheet\"><strong>Upload"
+" File</strong></a>."
+msgstr ""
+"Вернуться к <a href=\"/upload\" title=\"Загрузить рабочий лист\"><strong>Загрузить файл</strong></a>."
+
+#: ../flask_version/worksheet_listing.py:380
+#, python-format
+msgid ""
+"Please specify a worksheet to load.\n"
+"%(backlinks)s"
+msgstr "Пожалуйста, укажите рабочий лист для загрузки. %(backlinks)s"
+
+#: ../flask_version/worksheet_listing.py:384
+#, python-format
+msgid ""
+"Invalid filename.\n"
+"%(backlinks)s"
+msgstr "Неверное имя файла.\n%(backlinks)s"
+
+#: ../flask_version/worksheet_listing.py:425
+#, python-format
+msgid ""
+"There was an error uploading the worksheet.  It could be an old "
+"unsupported format or worse.  If you desperately need its contents "
+"contact the <a href=\"http://groups.google.com/group/sage-support\">sage-"
+"support group</a> and post a link to your worksheet.  Alternatively, an "
+"sws file is just a bzip2 tarball; take a look inside!\n"
+"%(backlinks)s"
+msgstr ""
+"Возникла ошибка при загружке рабочего листа. Возможно, это старый "
+"неподдерживаемый формат или того хуже. Если вам всё же очень нужно "
+"содержание этого файла, напишите в <a "
+"href=\"http://groups.google.com/group/sage-support\">группу sage-"
+"support</a> и дайте ссылку на ваш рабочий лист. Как вариант, попробуйте "
+"взглянуть внутрь файла сами: sws файл — это просто текстовой файл в "
+"архиве bzip2!\n%(backlinks)s"
+
+#: ../flask_version/worksheet_listing.py:436
+#, python-format
+msgid "Error uploading worksheet '%(msg)s'.%(backlinks)s"
+msgstr "Ошибка при загрузке рабочего листа '%(msg)s'. %(backlinks)s"
 
 #: ../sagenb/data/sage/html/base.html:33 ../sagenb/data/sage/html/login.html:35
 msgid "The Sage Notebook"
@@ -63,10 +271,6 @@ msgstr "Посмотреть опубликованные рабочие лис�
 #: ../sagenb/data/sage/html/base_authenticated.html:15
 msgid "View a log of recent computations"
 msgstr "Посмотреть историю последних вычислений"
-
-#: ../sagenb/data/sage/html/base_authenticated.html:15
-msgid "Log"
-msgstr "История"
 
 #: ../sagenb/data/sage/html/base_authenticated.html:17
 msgid "Change account settings including password"
@@ -189,20 +393,6 @@ msgstr ""
 "Sage Notebook был изначально создан William Stein, при помощи Tom "
 "Boothby, Timothy Clemans, Alex Clemesha, Mike Hansen, Bobby Moretti, Yi "
 "Qiang и Dorian Raymer."
-
-#: ../sagenb/data/sage/html/error_message.html:4
-#: ../sagenb/data/sage/html/login.html:69
-#: ../sagenb/data/sage/html/login.html:76
-#: ../sagenb/data/sage/html/login.html:104
-#: ../sagenb/data/sage/html/login.html:106
-#: ../sagenb/data/sage/html/recaptcha.html:27
-#: ../sagenb/data/sage/html/test_report.html:112
-#: ../sagenb/data/sage/html/test_report.html:131
-#: ../sagenb/data/sage/html/settings/admin_add_user.html:17
-#: ../sagenb/data/sage/html/settings/admin_add_user.html:19
-#: ../sagenb/data/sage/js/translated-messages.js:17
-msgid "Error"
-msgstr "Ошибка"
 
 #: ../sagenb/data/sage/html/error_message.html:19
 msgid "Continue"
@@ -341,11 +531,11 @@ msgstr ""
 "Sage Notebook основан на работе, поддерживаемой National Science "
 "Foundation в рамках грантов DMS-0821725, DMS-1020378, DMS-0713225, "
 "DMS-0555776, DMS-0545904, DMS-0838212, DMS-0757627, DUE-1020378, "
-"DUE-1022574, DMS-1015114, и др.    Любые мнения, находки, оценки"
-" или рекомендации представленные здесь являются частным мнением автора(ов)"
-" и могут не совпадать со взглядами National Science "
-"Foundation.   См. также <a href=\"http://sagemath.org/development-"
-"ack.html\">http://sagemath.org/development-ack.html</a>."
+"DUE-1022574, DMS-1015114, и др.    Любые мнения, находки, оценки или "
+"рекомендации представленные здесь являются частным мнением автора(ов) и "
+"могут не совпадать со взглядами National Science Foundation.   См. также "
+"<a href=\"http://sagemath.org/development-ack.html\">http://sagemath.org"
+"/development-ack.html</a>."
 
 #: ../sagenb/data/sage/html/login.html:66
 #: ../sagenb/data/sage/html/accounts/account_recovery.html:13
@@ -1130,12 +1320,6 @@ msgstr "Как вы хотите назвать лист? (если хотите
 #: ../sagenb/data/sage/html/notebook/upload_data_window.html:30
 msgid "Upload or Create Data File"
 msgstr "Закачать или создать файл данных"
-
-#: ../sagenb/data/sage/html/notebook/worksheet_page.html:28
-#: ../sagenb/notebook/misc.py:237 ../sagenb/notebook/worksheet.py:703
-#: ../sagenb/notebook/worksheet.py:723 ../sagenb/notebook/worksheet.py:4230
-msgid "Untitled"
-msgstr "Безымянный"
 
 #: ../sagenb/data/sage/html/notebook/worksheet_revision_list.html:6
 msgid "Revision History -- Previous sessions"
@@ -2066,437 +2250,349 @@ msgstr "Ожидалось определение цвета \"%(arg)s\" пос�
 msgid "%(seconds)s ago"
 msgstr "%(seconds)s назад"
 
-msgid "Upload worksheet (an sws or txt file) to the Sage Notebook"
-msgstr "Загрузить рабочий лист (файл sws или txt) в Sage Notebook"
-
-msgid "Browse your computer to select a worksheet file to upload:"
-msgstr "Выбирете для загрузки файл рабочего листа на вашем комьютере:"
-
-msgid "Or enter the URL of a worksheet file on the web:"
-msgstr "Либо введите URL файла рабочего листа в сети:"
-
-msgid "Upload Worksheet"
-msgstr "Импортировать рабочий лист"
-
-msgid "Sign up"
-msgstr "Войти"
-
-msgid "Sign up for a Sage Notebook account"
-msgstr "Зарегистрировать новый аккаунт в Sage Notebook"
-
-msgid "Errors found"
-msgstr "Найдены ошибки"
+#~ msgid "Upload worksheet (an sws or txt file) to the Sage Notebook"
+#~ msgstr "Загрузить рабочий лист (файл sws или txt) в Sage Notebook"
+
+#~ msgid "Browse your computer to select a worksheet file to upload:"
+#~ msgstr "Выбирете для загрузки файл рабочего листа на вашем комьютере:"
+
+#~ msgid "Or enter the URL of a worksheet file on the web:"
+#~ msgstr "Либо введите URL файла рабочего листа в сети:"
+
+#~ msgid "Upload Worksheet"
+#~ msgstr "Импортировать рабочий лист"
+
+#~ msgid "Sign up"
+#~ msgstr "Войти"
+
+#~ msgid "Sign up for a Sage Notebook account"
+#~ msgstr "Зарегистрировать новый аккаунт в Sage Notebook"
+
+#~ msgid "Errors found"
+#~ msgstr "Найдены ошибки"
 
-msgid "Error found"
-msgstr "Найдена ошибка"
+#~ msgid "Error found"
+#~ msgstr "Найдена ошибка"
 
-msgid "Create a username"
-msgstr "Выберите имя пользователя"
+#~ msgid "Create a username"
+#~ msgstr "Выберите имя пользователя"
 
-msgid ""
-"Your username must start with a "
-"letter and be between 3 and 64 "
-"characters long. You may only use "
-"letters, numbers, underscores, @, and "
-"dots."
-msgstr ""
-"Ваше имя пользователя должно начинаться "
-"с буквы и быть не короче 3 и"
-" не длиннее 64 символов. Можно "
-"использовать только буквы, цифры, знаки "
-"подчёркивания, @ и точки."
+#~ msgid ""
+#~ "Your username must start with a "
+#~ "letter and be between 3 and 64 "
+#~ "characters long. You may only use "
+#~ "letters, numbers, underscores, @, and "
+#~ "dots."
+#~ msgstr ""
+#~ "Ваше имя пользователя должно начинаться "
+#~ "с буквы и быть не короче 3 и"
+#~ " не длиннее 64 символов. Можно "
+#~ "использовать только буквы, цифры, знаки "
+#~ "подчёркивания, @ и точки."
 
-msgid "No username given"
-msgstr "Имя пользователя не указано"
+#~ msgid "No username given"
+#~ msgstr "Имя пользователя не указано"
 
-msgid "Username already in use"
-msgstr "Пользователь с таким именем уже зарегистрирован"
+#~ msgid "Username already in use"
+#~ msgstr "Пользователь с таким именем уже зарегистрирован"
 
-msgid "Bad username"
-msgstr "Неподходящее имя пользователя"
+#~ msgid "Bad username"
+#~ msgstr "Неподходящее имя пользователя"
 
-msgid "Create a good password"
-msgstr "Выберите хороший пароль"
+#~ msgid "Create a good password"
+#~ msgstr "Выберите хороший пароль"
 
-msgid ""
-"Your password must be between 4 "
-"and 32 characters long. Your password"
-" can not contain your username nor"
-" spaces."
-msgstr ""
-"Пароль должен быть не короче 4 и"
-" не длиннее 32 символов. Пароль не"
-" может содержать имя пользователя и "
-"пробелы."
+#~ msgid ""
+#~ "Your password must be between 4 "
+#~ "and 32 characters long. Your password"
+#~ " can not contain your username nor"
+#~ " spaces."
+#~ msgstr ""
+#~ "Пароль должен быть не короче 4 и"
+#~ " не длиннее 32 символов. Пароль не"
+#~ " может содержать имя пользователя и "
+#~ "пробелы."
 
-msgid "No password given"
-msgstr "Пароль не был введён"
+#~ msgid "No password given"
+#~ msgstr "Пароль не был введён"
 
-msgid "Bad password"
-msgstr "Неодходящий пароль"
+#~ msgid "Bad password"
+#~ msgstr "Неодходящий пароль"
 
-msgid "Re-type your password"
-msgstr "Наберите пароль ещё раз"
+#~ msgid "Re-type your password"
+#~ msgstr "Наберите пароль ещё раз"
 
-msgid "Passwords didn't match"
-msgstr "Пароли не совпадают"
+#~ msgid "Passwords didn't match"
+#~ msgstr "Пароли не совпадают"
 
-msgid "Enter your email address"
-msgstr "Введите ваш адрес электронной почты"
+#~ msgid "Enter your email address"
+#~ msgstr "Введите ваш адрес электронной почты"
 
-msgid ""
-"Your email address is required for "
-"account confirmation and recovery. You "
-"will be emailed a confirmation link "
-"right after you successfully sign up."
-msgstr ""
-"Ваш адрес электронной почты используется "
-"для подтверждения аккаунта и его "
-"восстановления в случае, если вы забыли"
-" пароль. После регистрации на этот "
-"адрес вам будет отправлена ссылка для"
-" его подтверждения."
+#~ msgid ""
+#~ "Your email address is required for "
+#~ "account confirmation and recovery. You "
+#~ "will be emailed a confirmation link "
+#~ "right after you successfully sign up."
+#~ msgstr ""
+#~ "Ваш адрес электронной почты используется "
+#~ "для подтверждения аккаунта и его "
+#~ "восстановления в случае, если вы забыли"
+#~ " пароль. После регистрации на этот "
+#~ "адрес вам будет отправлена ссылка для"
+#~ " его подтверждения."
 
-msgid "No email address given"
-msgstr "Адрес электронной почты не был введён"
+#~ msgid "No email address given"
+#~ msgstr "Адрес электронной почты не был введён"
 
-msgid "Invalid email address"
-msgstr "Неверный адрес электронной почты"
+#~ msgid "Invalid email address"
+#~ msgstr "Неверный адрес электронной почты"
 
-msgid "Answer a challenge"
-msgstr "Пройдите проверку"
+#~ msgid "Answer a challenge"
+#~ msgstr "Пройдите проверку"
 
-msgid "No challenge response given"
-msgstr "Вы не заполнили проверочное поле"
+#~ msgid "No challenge response given"
+#~ msgstr "Вы не заполнили проверочное поле"
 
-msgid "Invalid challenge response"
-msgstr "Неверный ответ в проверочном поле"
+#~ msgid "Invalid challenge response"
+#~ msgstr "Неверный ответ в проверочном поле"
 
-msgid "Undo"
-msgstr "Отменить"
+#~ msgid "Undo"
+#~ msgstr "Отменить"
 
-msgid "Revision History"
-msgstr "История изменений"
+#~ msgid "Revision History"
+#~ msgstr "История изменений"
 
-msgid "last edited on %(t)s by %(le)s"
-msgstr "отредактировано в последний раз %(t)s пользователем %(le)s"
+#~ msgid "last edited on %(t)s by %(le)s"
+#~ msgstr "отредактировано в последний раз %(t)s пользователем %(le)s"
 
-msgid "Please ask the server administrator to configure a challenge!"
-msgstr ""
-"Пожалуйста, попросите администратора сервера "
-"настроить средство защиты от ботов!"
+#~ msgid "Please ask the server administrator to configure a challenge!"
+#~ msgstr ""
+#~ "Пожалуйста, попросите администратора сервера "
+#~ "настроить средство защиты от ботов!"
 
-msgid "Is pi > e?"
-msgstr "Верно ли, что π>e?"
+#~ msgid "Is pi > e?"
+#~ msgstr "Верно ли, что π>e?"
 
-msgid "y|yes"
-msgstr "д|да"
+#~ msgid "y|yes"
+#~ msgstr "д|да"
 
-msgid "What is 3 times 8?"
-msgstr "Сколько будет трижды восемь?"
+#~ msgid "What is 3 times 8?"
+#~ msgstr "Сколько будет трижды восемь?"
 
-msgid "24|twenty-four"
-msgstr "24|двадцать четыре"
+#~ msgid "24|twenty-four"
+#~ msgstr "24|двадцать четыре"
 
-msgid "What is 2 plus 3?"
-msgstr "Сколько будет два плюс три?"
+#~ msgid "What is 2 plus 3?"
+#~ msgstr "Сколько будет два плюс три?"
 
-msgid "5|five"
-msgstr "5|пять"
+#~ msgid "5|five"
+#~ msgstr "5|пять"
 
-msgid "How many bits are in one byte?"
-msgstr "Сколько бит в одном байте?"
+#~ msgid "How many bits are in one byte?"
+#~ msgstr "Сколько бит в одном байте?"
 
-msgid "8|eight"
-msgstr "8|восемь"
+#~ msgid "8|eight"
+#~ msgstr "8|восемь"
 
-msgid "What is the largest prime factor of 15?"
-msgstr "Какой наибольший простой делитель числа 15?"
+#~ msgid "What is the largest prime factor of 15?"
+#~ msgstr "Какой наибольший простой делитель числа 15?"
 
-msgid "optional"
-msgstr "опционально"
+#~ msgid "optional"
+#~ msgstr "опционально"
 
-msgid ""
-"Hi %s!\n"
-"\n"
-msgstr ""
-"Привет %s!\n"
-"\n"
+#~ msgid ""
+#~ "Hi %s!\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Привет %s!\n"
+#~ "\n"
 
-msgid "Appearance"
-msgstr "Внешний вид"
+#~ msgid "Appearance"
+#~ msgstr "Внешний вид"
 
-msgid "Authentication"
-msgstr "Аутентификация"
-
-msgid "Server"
-msgstr "Сервер"
-
-msgid "Number of word-wrap columns"
-msgstr "Количество столбцов с переносом слов"
+#~ msgid "Authentication"
+#~ msgstr "Аутентификация"
 
-msgid "Maximum history length"
-msgstr "Максимальный размер истории"
+#~ msgid "Server"
+#~ msgstr "Сервер"
 
-msgid "Idle timeout (seconds)"
-msgstr "Максимальное ожидания (в секундах)"
+#~ msgid "Number of word-wrap columns"
+#~ msgstr "Максимальная длина строки при переносе слов"
 
-msgid "Idle check interval (seconds)"
-msgstr "Интервал между запросами (в секундах)"
+#~ msgid "Maximum history length"
+#~ msgstr "Максимальный размер истории"
 
-msgid "Save interval (seconds)"
-msgstr "Время до автосохранения (в секундах)"
+#~ msgid "Idle timeout (seconds)"
+#~ msgstr "Максимальное ожидания (в секундах)"
 
-msgid "Doc pool size"
-msgstr "Размер пула документации"
+#~ msgid "Idle check interval (seconds)"
+#~ msgstr "Интервал между запросами (в секундах)"
 
-msgid "Worksheet process users (comma-separated list)"
-msgstr "Пользователи процесса рабочего листа (список, разделённый запятыми)"
+#~ msgid "Save interval (seconds)"
+#~ msgstr "Время до автосохранения (в секундах)"
 
-msgid "Default system"
-msgstr "Система по-умолчанию"
+#~ msgid "Doc pool size"
+#~ msgstr "Размер пула документации"
 
-msgid "Pretty print (typeset) output"
-msgstr "Автоформатирование вывода"
+#~ msgid "Worksheet process users (comma-separated list)"
+#~ msgstr "Пользователи процесса рабочего листа (список, разделённый запятыми)"
 
-msgid "Worksheet process limits"
-msgstr "Ограничения процесса рабочего листа"
+#~ msgid "Default system"
+#~ msgstr "Система по-умолчанию"
 
-msgid "Require e-mail for account registration"
-msgstr "Требовать e-mail для регистрации аккаунта"
+#~ msgid "Pretty print (typeset) output"
+#~ msgstr "Автоформатирование вывода"
 
-msgid "Enable user registration"
-msgstr "Разрешить регистрацию пользователей"
+#~ msgid "Worksheet process limits"
+#~ msgstr "Ограничения процесса рабочего листа"
 
-msgid "Use a challenge for account registration"
-msgstr "Использовать защиту от ботов при регистрации аккаунтов"
+#~ msgid "Require e-mail for account registration"
+#~ msgstr "Требовать e-mail для регистрации аккаунта"
 
-msgid "Type of challenge"
-msgstr "Тип защиты"
+#~ msgid "Enable user registration"
+#~ msgstr "Разрешить регистрацию пользователей"
 
-msgid "reCAPTCHA public key"
-msgstr "Публичный ключ reCAPTCHA"
+#~ msgid "Use a challenge for account registration"
+#~ msgstr "Использовать защиту от ботов при регистрации аккаунтов"
 
-msgid "reCAPTCHA private key"
-msgstr "Закрытый ключ reCAPTCHA"
+#~ msgid "Type of challenge"
+#~ msgstr "Тип защиты"
 
-msgid "Default Language"
-msgstr "Язык по умолчанию"
+#~ msgid "reCAPTCHA public key"
+#~ msgstr "Публичный ключ reCAPTCHA"
 
-msgid "Please specify a worksheet to load.%s"
-msgstr "Пожалуйста, укажите рабочий лист для загрузки.%s"
+#~ msgid "reCAPTCHA private key"
+#~ msgstr "Закрытый ключ reCAPTCHA"
 
-msgid ""
-"There was an error uploading the "
-"worksheet.  It could be an old "
-"unsupported format or worse.  If you "
-"desperately need its contents contact "
-"the <a href=\"http://groups.google.com/group/sage-"
-"support\">sage-support group</a> and post "
-"a link to your worksheet.  "
-"Alternatively, an sws file is just "
-"a bzip2 tarball; take a look "
-"inside!%s"
-msgstr ""
-"Возникла ошибка при загружке рабочего "
-"листа. Возможно, это старый неподдерживаемый"
-" формат или того хуже. Если вам "
-"всё же очень нужно содержание этого "
-"файла, напишите в <a "
-"href=\"http://groups.google.com/group/sage-support\">группу "
-"sage-support</a> и дайте ссылку на "
-"ваш рабочий лист. Как вариант, "
-"попробуйте взглянуть внутрь файла сами: "
-"sws файл — это просто текстовой "
-"файл в архиве bzip2!%s"
+#~ msgid "Default Language"
+#~ msgstr "Язык по умолчанию"
 
-msgid "There was an error uploading \"%s\" (please recheck the URL).%s"
-msgstr "Возникла ошибка при загрузке \"%s\" (пожалуйста, проверьте URL).%s"
+#~ msgid "There was an error uploading \"%s\" (please recheck the URL).%s"
+#~ msgstr "Возникла ошибка при загрузке \"%s\" (пожалуйста, проверьте URL).%s"
 
-msgid ""
-"Return to <a href=\"%s\" title=\"Upload "
-"or create a data file in a "
-"wide range of formats\"><strong>Upload or "
-"Create Data File</strong></a> or <a "
-"href=\"%s\" title=\"Interactively use the "
-"worksheet\"><strong>%s</strong></a>."
-msgstr ""
-"Вернуться к <a href=\"%s\" title=\"Загрузить"
-" или создать файл данных в одном "
-"из многочисленных поддерживаемых "
-"форматах\"><strong>Загрузить или создать файл "
-"данных</strong></a> или <a href=\"%s\" "
-"title=\"Интерактивно использовать рабочий "
-"лист\"><strong>%s</strong></a>."
+#~ msgid "Successfully deleted \"%s\""
+#~ msgstr "Файл \"%s\" успешно удалён"
 
-msgid "Error uploading file (missing fileField file).%s"
-msgstr "Ошибка при загрузке файла (отсутствует файл fileField).%s"
-
-msgid "Error uploading file (missing %s arg).%s"
-msgstr "Ошибка при загрузке файла (отсутствует аргумент %s).%s"
+#~ msgid "Error in introspection -- invalid cell id."
+#~ msgstr "Ошибка при самоанализе — неправильный идентификатор ячейки."
 
-msgid "Error uploading file (missing filename).%s"
-msgstr "Ошибка при загрузке файла (отсутствует имя файла).%s"
+#~ msgid "You must <a href=\"/\">login first</a> in order to edit this worksheet."
+#~ msgstr ""
+#~ "Чтобы редактировать этот рабочий лист, "
+#~ "вы должны <a href=\"/\">войти</a>."
 
-msgid "Suspicious filename \"%s\" encountered uploading file.%s"
-msgstr "Подозрительное имя файла \"%s\" обнаружено при загрузке файла.%s"
+#~ msgid "Old password not given"
+#~ msgstr "Старый пароль не был введён"
 
-msgid "Successfully deleted \"%s\""
-msgstr "Файл \"%s\" успешно удалён"
+#~ msgid "Incorrect password given"
+#~ msgstr "Введён некорректный пароль"
 
-msgid "No data files"
-msgstr "Нет файлов данных"
+#~ msgid "New password not given"
+#~ msgstr "Новый пароль не был указан"
 
-msgid "Error in introspection -- invalid cell id."
-msgstr "Ошибка при самоанализе — неправильный идентификатор ячейки."
+#~ msgid "Please type in new password again."
+#~ msgstr "Пожалуйста. введите новый пароль ещё раз."
 
-msgid "You must <a href=\"/\">login first</a> in order to edit this worksheet."
-msgstr ""
-"Чтобы редактировать этот рабочий лист, "
-"вы должны <a href=\"/\">войти</a>."
-
-msgid "Old password not given"
-msgstr "Старый пароль не был введён"
-
-msgid "Incorrect password given"
-msgstr "Введён некорректный пароль"
-
-msgid "New password not given"
-msgstr "Новый пароль не был указан"
-
-msgid "Please type in new password again."
-msgstr "Пожалуйста. введите новый пароль ещё раз."
-
-msgid "The passwords you entered do not match."
-msgstr "Введённые пароли не совпадают."
-
-msgid "Confirmed"
-msgstr "Подтверждено"
-
-msgid "Not confirmed"
-msgstr "Не подтверждено"
-
-msgid "can't evaluate worksheet cells"
-msgstr "не удаётся выполнить ячейки рабочего листа"
+#~ msgid "The passwords you entered do not match."
+#~ msgstr "Введённые пароли не совпадают."
 
-msgid "You must <a href=\"/\">login first</a> in order to rate this worksheet."
-msgstr ""
-"Для того, чтобы оценить этот рабочий "
-"лист вы должны сначала <a "
-"href=\"/\">войти</a>."
+#~ msgid "Confirmed"
+#~ msgstr "Подтверждено"
 
-msgid "Gees -- You can't fool the rating system that easily!"
-msgstr "Фи!  — Нельзя обмануть систему оценок так просто!"
+#~ msgid "can't evaluate worksheet cells"
+#~ msgstr "не удаётся выполнить ячейки рабочего листа"
 
-msgid ""
-"Thank you for rating the worksheet "
-"<b><i>%s</i></b>! You can <a "
-"href=\"rating_info\">see all ratings of this"
-" worksheet.</a>"
-msgstr ""
-"Спасибо за оценку рабочего листа "
-"<b><i>%s</i></b>! Вы можете <a "
-"href=\"rating_info\">посмотреть все оценки этого "
-"листа.</a>"
+#~ msgid "You must <a href=\"/\">login first</a> in order to rate this worksheet."
+#~ msgstr ""
+#~ "Для того, чтобы оценить этот рабочий "
+#~ "лист вы должны сначала <a "
+#~ "href=\"/\">войти</a>."
 
-msgid "Rating Accepted"
-msgstr "Оценка учтена"
+#~ msgid "Gees -- You can't fool the rating system that easily!"
+#~ msgstr "Фи!  — Нельзя обмануть систему оценок так просто!"
 
-msgid "No such worksheet."
-msgstr "Запрошенный рабочий лист не найден."
+#~ msgid ""
+#~ "Thank you for rating the worksheet "
+#~ "<b><i>%s</i></b>! You can <a "
+#~ "href=\"rating_info\">see all ratings of this"
+#~ " worksheet.</a>"
+#~ msgstr ""
+#~ "Спасибо за оценку рабочего листа "
+#~ "<b><i>%s</i></b>! Вы можете <a "
+#~ "href=\"rating_info\">посмотреть все оценки этого "
+#~ "листа.</a>"
 
-msgid "The worksheet operation \"%s\" is not defined."
-msgstr "Операция \"%s\" не определена для рабочего листа."
+#~ msgid "Rating Accepted"
+#~ msgstr "Оценка учтена"
 
-msgid "User \"%s\" does not have permission to view the home page of \"%s\"."
-msgstr ""
-"У пользователя \"%s\" нет разрешения на"
-" просмотр домашней страницы \"%s\"."
+#~ msgid "The worksheet operation \"%s\" is not defined."
+#~ msgstr "Операция \"%s\" не определена для рабочего листа."
 
-msgid "The user \"%s\" has no worksheet \"%s\"."
-msgstr "У пользователя \"%s\" нет рабочего листа \"%s\"."
+#~ msgid "The user \"%s\" has no worksheet \"%s\"."
+#~ msgstr "У пользователя \"%s\" нет рабочего листа \"%s\"."
 
-msgid ""
-"There is no published worksheet with "
-"name \"%s\".  Redirecting to the index"
-" of published worksheets in 10 "
-"seconds...<br><br>"
-msgstr ""
-"Нет опубликованных рабочих листов с "
-"именем \"%s\".  Перенаправление на список "
-"опубликованных рабочих листов через 10 "
-"секунд...<br><br>"
+#~ msgid ""
+#~ "There is no published worksheet with "
+#~ "name \"%s\".  Redirecting to the index"
+#~ " of published worksheets in 10 "
+#~ "seconds...<br><br>"
+#~ msgstr ""
+#~ "Нет опубликованных рабочих листов с "
+#~ "именем \"%s\".  Перенаправление на список "
+#~ "опубликованных рабочих листов через 10 "
+#~ "секунд...<br><br>"
 
-msgid "You are not logged in or do not have access to the worksheet \"%s\"."
-msgstr ""
-"Вы не вошли в систему или не "
-"имеете прав доступа к рабочему листу "
-"\"%s\"."
+#~ msgid "You are not logged in or do not have access to the worksheet \"%s\"."
+#~ msgstr ""
+#~ "Вы не вошли в систему или не "
+#~ "имеете прав доступа к рабочему листу "
+#~ "\"%s\"."
 
-msgid "This url can only be accessed through a POST request."
-msgstr "Этот URL может быть принят только через запрос POST."
+#~ msgid "This url can only be accessed through a POST request."
+#~ msgstr "Этот URL может быть принят только через запрос POST."
 
-msgid "You are not authorized to move \"%s\""
-msgstr "Вы не авторизованны для перемещения \"%s\""
+#~ msgid "You are not authorized to move \"%s\""
+#~ msgstr "Вы не авторизованны для перемещения \"%s\""
 
-msgid "Please request a specific worksheet"
-msgstr "Пожалуйста, укажите рабочий лист."
+#~ msgid "Please request a specific worksheet"
+#~ msgstr "Пожалуйста, укажите рабочий лист."
 
-msgid "The confirmation system is not active."
-msgstr "Система подтверждения не активна."
+#~ msgid "Language"
+#~ msgstr "Предпочитаемый язык"
 
-msgid ""
-"<h1>Invalid confirmation key</h1><p>You are "
-"reporting a confirmation key that has"
-" not been assigned by this server."
-" Please <a href=\"/register\">register</a> with"
-" the server.</p>"
-msgstr ""
-"<h1>Неверный код подтверждения</h1><p>Вы сообщили"
-" ключ подтверждения, который не связан "
-"с этим сервером. Пожалуйста, <a "
-"href=\"/register\">зарегистрируйтесь</a> на этом "
-"сервере.</p>"
+#~ msgid "January"
+#~ msgstr "Январь"
 
-msgid "<h1>Email address confirmed for user %s</h1>"
-msgstr "<h1>Электронный адрес подтверждён для пользователя</h1>"
+#~ msgid "February"
+#~ msgstr "Февраль"
 
-msgid "Language"
-msgstr "Предпочитаемый язык"
+#~ msgid "March"
+#~ msgstr "Март"
 
-msgid "January"
-msgstr "Январь"
+#~ msgid "April"
+#~ msgstr "Апрель"
 
-msgid "February"
-msgstr "Февраль"
+#~ msgid "May"
+#~ msgstr "Май"
 
-msgid "March"
-msgstr "Март"
+#~ msgid "June"
+#~ msgstr "Июнь"
 
-msgid "April"
-msgstr "Апрель"
+#~ msgid "July"
+#~ msgstr "Июль"
 
-msgid "May"
-msgstr "Май"
+#~ msgid "August"
+#~ msgstr "Август"
 
-msgid "June"
-msgstr "Июнь"
+#~ msgid "September"
+#~ msgstr "Сентябрь"
 
-msgid "July"
-msgstr "Июль"
+#~ msgid "October"
+#~ msgstr "Октябрь"
 
-msgid "August"
-msgstr "Август"
+#~ msgid "November"
+#~ msgstr "Ноябрь"
 
-msgid "September"
-msgstr "Сентябрь"
-
-msgid "October"
-msgstr "Октябрь"
-
-msgid "November"
-msgstr "Ноябрь"
-
-msgid "December"
-msgstr "Декабрь"
+#~ msgid "December"
+#~ msgstr "Декабрь"
 
