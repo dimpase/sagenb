@@ -224,6 +224,8 @@ def notebook_twisted(self,
              accounts      = None,
              openid        = None,
 
+             ldap          = None,
+
              auth_ldap      = False,
              ldap_uri       = 'ldap://example.net:389/',
              ldap_basedn    = 'ou=users,dc=example,dc=net',
@@ -305,14 +307,26 @@ def notebook_twisted(self,
 
     if auth_ldap:
         nb.conf()['auth_ldap'] = True
-        nb.conf()['ldap_uri'] = ldap_uri
-        nb.conf()['ldap_basedn'] = ldap_basedn
-        nb.conf()['ldap_binddn'] = ldap_binddn
-        nb.conf()['ldap_bindpw'] = ldap_bindpw
-        nb.conf()['ldap_username_attrib'] = ldap_username_attrib
-        nb.conf()['ldap_lookup_attribs'] = ldap_lookup_attribs
-    else:
+        #nb.conf()['ldap_uri'] = ldap_uri
+        #nb.conf()['ldap_basedn'] = ldap_basedn
+        #nb.conf()['ldap_binddn'] = ldap_binddn
+        #nb.conf()['ldap_bindpw'] = ldap_bindpw
+        #nb.conf()['ldap_username_attrib'] = ldap_username_attrib
+        #nb.conf()['ldap_lookup_attribs'] = ldap_lookup_attribs
+        ldap_params = dict(uri=ldap_uri, basedn=ldap_basedn,
+            binddn=ldap_binddn, binpw=ldap_binpw,
+            username_attrib=ldap_username_attrib,
+            lookup_attribs=ldap_lookup_attribs)
+        if ldap is None: ldap=ldap_params
+        else: ldap.update(ldap_params)
+        del ldap_params
+    elif not nb.conf()['auth_ldap']:
         nb.conf()['auth_ldap'] = False
+
+    if ldap is not None:
+        nb.conf()['ldap'] = ldap
+    elif not nb.conf()['ldap']:
+        nb.conf()['ldap'] = False
 
     if nb.user_manager().user_exists('root') and not nb.user_manager().user_exists('admin'):
         # This is here only for backward compatibility with one
@@ -320,9 +334,10 @@ def notebook_twisted(self,
         s = nb.create_user_with_same_password('admin', 'root')
         # It would be a security risk to leave an escalated account around.
 
-    if not auth_ldap and not nb.user_manager().user_exists('admin'):
-        reset = True
-        
+    if not nb.user_manager().user_exists('admin'):
+        if not auth_ldap:
+            reset = True
+
     if reset:
         passwd = get_admin_passwd()                
         if reset:

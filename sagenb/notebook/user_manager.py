@@ -589,11 +589,9 @@ class ExtAuthUserManager(OpenIDUserManager):
         # currently only 'auth_ldap' here. the key must match to a T_BOOL option in server_config.py
         # so we can turn this auth method on/off
         self._auth_methods = { 
-                    'auth_ldap': LdapAuth(self._conf),
+                    'auth_ldap': LdapAuth(conf=self._conf),
+                    'simple': SimpleUserManager(conf=self._conf)
                     }
-        self.add_user('pub', '', '', account_type='user', force=True)
-        self.add_user('_sage_', '', '', account_type='user', force=True)
-        self.add_user('guest', '', '', account_type='guest', force=True)
 
     def _user(self, username):
         # check all auth methods that are enabled in the notebook's config
@@ -691,9 +689,9 @@ class LdapAuth(AuthMethod):
         runs any ldap query passed as arg
         """
         import ldap
-        conn = ldap.initialize(self._conf['ldap_uri'])
+        conn = ldap.initialize(self._conf['ldap']['uri'])
         try: 
-            conn.simple_bind_s(self._conf['ldap_binddn'], self._conf['ldap_bindpw'])
+            conn.simple_bind_s(self._conf['ldap']['binddn'], self._conf['ldap']['bindpw'])
         except: 
             raise ValueError, "invalid LDAP credentials"
 
@@ -702,7 +700,7 @@ class LdapAuth(AuthMethod):
         attrlist = [normalize("NFKD", unicode(x)).encode('utf8', 'ignore') for x in attrlist] if attrlist is not None else None
         query = normalize("NFKD", unicode(query)).encode('utf8', 'ignore')
 
-        result = conn.search_s(self._conf['ldap_basedn'], ldap.SCOPE_SUBTREE, query, attrlist)
+        result = conn.search_s(self._conf['ldap']['basedn'], ldap.SCOPE_SUBTREE, query, attrlist)
         conn.unbind_s()
         return result
         
@@ -715,7 +713,7 @@ class LdapAuth(AuthMethod):
         except AssertionError, UnicodeDecodeError:
             return None
 
-        result = self._ldap_search("(%s=%s)" % (self._conf['ldap_username_attrib'], username), attrlist)
+        result = self._ldap_search("(%s=%s)" % (self._conf['ldap']['username_attrib'], username), attrlist)
         # there can be only one
         if len(result) == 1:
             return result[0]
@@ -725,13 +723,13 @@ class LdapAuth(AuthMethod):
     def user_lookup(self, search):
         # build a ldap OR query
         q = "(|"
-        for a in self._conf['ldap_lookup_attribs']:
+        for a in self._conf['ldap']['lookup_attribs']:
             q += "(%s=*%s*)" % (a, search)
         q += ")"
 
-        r = self._ldap_search(q, attrlist=[self._conf['ldap_username_attrib']])
+        r = self._ldap_search(q, attrlist=[self._conf['ldap']['username_attrib']])
         # return a list of usernames. looks quite ugly
-        return [x[1][self._conf['ldap_username_attrib']][0] for x in r if x[1].has_key(self._conf['ldap_username_attrib'])]
+        return [x[1][self._conf['ldap']['username_attrib']][0] for x in r if x[1].has_key(self._conf['ldap']['username_attrib'])]
         
         
     def check_user(self, username):
@@ -750,7 +748,7 @@ class LdapAuth(AuthMethod):
 
         # try to bind with that DN
         try: 
-            conn = ldap.initialize(uri=self._conf['ldap_uri'])
+            conn = ldap.initialize(uri=self._conf['ldap']['uri'])
             conn.simple_bind_s(userdn, password)
             conn.unbind_s()
             return True
