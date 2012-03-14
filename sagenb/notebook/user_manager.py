@@ -584,19 +584,17 @@ class OpenIDUserManager(SimpleUserManager):
 
 class ExtAuthUserManager(OpenIDUserManager):
     def __init__(self, conf):
-        OpenIDUserManager.__init__(self, conf=conf)
+        OpenIDUserManager.__init__(self, accounts=accounts, conf=conf)
         self._conf = conf
         # currently only 'auth_ldap' here. the key must match to a T_BOOL option in server_config.py
         # so we can turn this auth method on/off
         self._auth_methods = { 
                     'auth_ldap': LdapAuth(conf=self._conf),
-                    'simple': SimpleUserManager(conf=self._conf)
                     }
 
     def _user(self, username):
         # check all auth methods that are enabled in the notebook's config
         # if a valid username is found, a new User object will be created.
-        # (if that user was already known, we wouldn't be here)
         for a in self._auth_methods:
             if self._conf[a]:
                 u = self._auth_methods[a].check_user(username)
@@ -609,7 +607,7 @@ class ExtAuthUserManager(OpenIDUserManager):
                     self.add_user(username, password='', email=email, account_type='external', force=True)
                     return self.users()[username]
 
-        raise KeyError, "no user '%s'"%username
+        return OpenIDUserManager._user(self, username)
 
     def _check_password(self, username, password):
         for a in self._auth_methods:
@@ -618,7 +616,7 @@ class ExtAuthUserManager(OpenIDUserManager):
                 u = self._auth_methods[a].check_user(username)
                 if u:
                     return self._auth_methods[a].check_password(username, password)
-        return False
+        return OpenIDUserManager.check_password(self, username, password)
         
     def _user_lookup(self, search):
         """
