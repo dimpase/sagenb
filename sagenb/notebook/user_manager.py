@@ -583,7 +583,7 @@ class OpenIDUserManager(SimpleUserManager):
 
 
 class ExtAuthUserManager(OpenIDUserManager):
-    def __init__(self, conf):
+    def __init__(self, conf=None, accounts=None):
         OpenIDUserManager.__init__(self, accounts=accounts, conf=conf)
         self._conf = conf
         # currently only 'auth_ldap' here. the key must match to a T_BOOL option in server_config.py
