@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-03-14 08:07+0400\n"
+"POT-Creation-Date: 2012-03-18 03:46+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1569,6 +1569,46 @@ msgid_plural "Trying again in %(num)d seconds..."
 msgstr[0] ""
 msgstr[1] ""
 
+#: ../sagenb/notebook/challenge.py:180
+msgid "Please ask the server administrator to configure a challenge!"
+msgstr ""
+
+#: ../sagenb/notebook/challenge.py:221
+msgid "Is pi > e?"
+msgstr ""
+
+#: ../sagenb/notebook/challenge.py:221
+msgid "y|yes"
+msgstr ""
+
+#: ../sagenb/notebook/challenge.py:222
+msgid "What is 3 times 8?"
+msgstr ""
+
+#: ../sagenb/notebook/challenge.py:222
+msgid "24|twenty-four"
+msgstr ""
+
+#: ../sagenb/notebook/challenge.py:223
+msgid "What is 2 plus 3?"
+msgstr ""
+
+#: ../sagenb/notebook/challenge.py:223 ../sagenb/notebook/challenge.py:225
+msgid "5|five"
+msgstr ""
+
+#: ../sagenb/notebook/challenge.py:224
+msgid "How many bits are in one byte?"
+msgstr ""
+
+#: ../sagenb/notebook/challenge.py:224
+msgid "8|eight"
+msgstr ""
+
+#: ../sagenb/notebook/challenge.py:225
+msgid "What is the largest prime factor of 15?"
+msgstr ""
+
 #: ../sagenb/notebook/conf.py:124
 msgid "Updated"
 msgstr ""
@@ -1601,6 +1641,130 @@ msgid ""
 "\n"
 "Make sure to reset your password by going to Settings in the upper right "
 "bar."
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:57
+msgid "Appearance"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:58
+msgid "Authentication"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:59
+msgid "LDAP"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:60
+msgid "Server"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:65
+msgid "Number of word-wrap columns"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:71
+msgid "Maximum history length"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:77
+msgid "Idle timeout (seconds)"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:83
+msgid "Idle check interval (seconds)"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:89
+msgid "Save interval (seconds)"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:95
+msgid "Doc worksheet pool size"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:101
+msgid "Doc worksheet idle timeout (seconds)"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:107
+msgid "Enable published interacts (EXPERIMENTAL; USE AT YOUR OWN RISK)"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:113
+msgid "Worksheet process users (comma-separated list)"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:119
+msgid "Default system"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:125
+msgid "Pretty print (typeset) output"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:131
+msgid "Worksheet process limits"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:138
+msgid "Require e-mail for account registration"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:145
+msgid "Enable user registration"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:152
+msgid "Allow OpenID authentication (requires python ssl module)"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:159
+msgid "Use a challenge for account registration"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:166
+msgid "Type of challenge"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:173
+msgid "reCAPTCHA public key"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:179
+msgid "reCAPTCHA private key"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:185
+msgid "Default Language"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:191
+msgid "Model Version"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:197
+msgid "Enable LDAP Authentication"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:209
+msgid "Bind DN"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:215
+msgid "Bind Password"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:221
+msgid "Base DN"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:227
+msgid "Username Attribute (i.e. cn, uid or userPrincipalName)"
+msgstr ""
+
+#: ../sagenb/notebook/server_conf.py:233
+msgid "Attributes for user lookup"
 msgstr ""
 
 #: ../sagenb/notebook/template.py:74
