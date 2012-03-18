@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-03-18 03:46+0400\n"
+"POT-Creation-Date: 2012-03-18 08:47+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,6 +85,16 @@ msgstr ""
 #: ../sagenb/data/sage/html/recaptcha.html:27
 #: ../sagenb/data/sage/html/test_report.html:112
 #: ../sagenb/data/sage/html/test_report.html:131
+#: ../sagenb/data/sage/html/accounts/registration.html:22
+#: ../sagenb/data/sage/html/accounts/registration.html:25
+#: ../sagenb/data/sage/html/accounts/registration.html:28
+#: ../sagenb/data/sage/html/accounts/registration.html:39
+#: ../sagenb/data/sage/html/accounts/registration.html:42
+#: ../sagenb/data/sage/html/accounts/registration.html:49
+#: ../sagenb/data/sage/html/accounts/registration.html:62
+#: ../sagenb/data/sage/html/accounts/registration.html:65
+#: ../sagenb/data/sage/html/accounts/registration.html:74
+#: ../sagenb/data/sage/html/accounts/registration.html:77
 #: ../sagenb/data/sage/html/settings/admin_add_user.html:17
 #: ../sagenb/data/sage/html/settings/admin_add_user.html:19
 #: ../sagenb/data/sage/js/translated-messages.js:17
@@ -759,6 +769,7 @@ msgid "Submit"
 msgstr ""
 
 #: ../sagenb/data/sage/html/accounts/account_recovery.html:17
+#: ../sagenb/data/sage/html/accounts/registration.html:83
 #: ../sagenb/data/sage/html/notebook/download_or_delete_datafile.html:54
 #: ../sagenb/data/sage/html/notebook/edit_window.html:12
 #: ../sagenb/data/sage/html/settings/account_settings.html:10
@@ -767,6 +778,97 @@ msgstr ""
 #: ../sagenb/data/sage/html/settings/notebook_settings.html:20
 #: ../sagenb/data/sage/html/settings/notebook_settings.html:27
 msgid "Cancel"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:3
+msgid "Sign up"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:9
+msgid "Sign up for a Sage Notebook account"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:16
+msgid "Create a username"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:17
+msgid ""
+"Your username must start with a letter and be between 3 and 64 characters"
+" long. You may only use letters, numbers, underscores, @, and dots."
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:22
+msgid "No username given"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:25
+msgid "Username already in use"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:28
+msgid "Bad username"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:32
+msgid "Create a good password"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:34
+msgid ""
+"Your password must have at least 4 characters. Your password can not "
+"contain your username or spaces."
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:39
+msgid "No password given"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:42
+msgid "Bad password"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:46
+msgid "Re-type your password"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:49
+msgid "Passwords didn't match"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:54
+msgid "Enter your email address"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:56
+msgid ""
+"Your email address is required for account confirmation and recovery. You"
+" will be emailed a confirmation link right after you successfully sign "
+"up."
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:62
+msgid "No email address given"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:65
+msgid "Invalid email address"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:71
+msgid "Answer a challenge"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:74
+msgid "No challenge response given"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:77
+msgid "Invalid challenge response"
+msgstr ""
+
+#: ../sagenb/data/sage/html/accounts/registration.html:82
+msgid "Create account"
 msgstr ""
 
 #: ../sagenb/data/sage/html/notebook/afterpublish_window.html:8
