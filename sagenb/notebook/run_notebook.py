@@ -323,8 +323,7 @@ def notebook_twisted(self,
         # It would be a security risk to leave an escalated account around.
 
     if not nb.user_manager().user_exists('admin'):
-        if not auth_ldap:
-            reset = True
+        reset = True
 
     if reset:
         passwd = get_admin_passwd()                
