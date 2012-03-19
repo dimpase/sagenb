@@ -690,46 +690,58 @@ class LdapAuth(AuthMethod):
         conn = ldap.initialize(self._conf['ldap_uri'])
         try: 
             conn.simple_bind_s(self._conf['ldap_binddn'], self._conf['ldap_bindpw'])
-        except: 
+        except ldap.LDAPError, e:
+            print e
+            raise
+        except ldap.INVALID_CREDENTIALS, e:
+            print e
             raise ValueError, "invalid LDAP credentials"
 
-        # convert query and attrlist to utf8, non-ascii login usernames filtered at this moment
-        from unicodedata import normalize
-        attrlist = [normalize("NFKD", unicode(x)).encode('utf8', 'ignore') for x in attrlist] if attrlist is not None else None
-        query = normalize("NFKD", unicode(query)).encode('utf8', 'ignore')
-
-        result = conn.search_s(self._conf['ldap_basedn'], ldap.SCOPE_SUBTREE, query, attrlist)
+        result = conn.search_ext_s(self._conf['ldap_basedn'],
+                                     ldap.SCOPE_SUBTREE,
+                                     filterstr=query,
+                                     attrlist=attrlist,
+                                     # TODO:
+                                     #timeout=self._conf['ldap_timeout'],
+                                     #sizelimit=self._conf['ldap_sizelimit']
+                                     )
         conn.unbind_s()
         return result
         
     def _get_ldapuser(self, username, attrlist=None):
-        # only ascii usernames allowed
+        from ldap import LDAPError
+        from ldap.filter import filter_format
+        # escape
         try:
-            import re
-            username.decode('ascii')
-            assert(re.match('[a-zA-Z0-9\.\-_@]+', username))
-        except AssertionError, UnicodeDecodeError:
+            result = self._ldap_search(filter_format("(%s=%s)", [self._conf['ldap_username_attrib'], username]), attrlist)
+        except LDAPError, e:
+            print e
             return None
-
-        result = self._ldap_search("(%s=%s)" % (self._conf['ldap_username_attrib'], username), attrlist)
-        # there can be only one
-        if len(result) == 1:
-            return result[0]
-        else:
-            return None
+        # return None if more than 1 object found
+        return result[0] if len(result) == 1 else None
 
     def user_lookup(self, search):
+        from ldap.filter import filter_format
+        from ldap import LDAPError
         # build a ldap OR query
-        q = "(|"
-        for a in self._conf['ldap_lookup_attribs']:
-            q += "(%s=*%s*)" % (a, search)
-        q += ")"
+        q = ''.join((
+            filter_format("(%s=*%s*)", [a, search])
+                for a in self._conf['ldap_lookup_attribs']
+        ))
+        q = q.join(('(|', ')'))
 
-        r = self._ldap_search(q, attrlist=[self._conf['ldap_username_attrib']])
-        # return a list of usernames. looks quite ugly
-        return [x[1][self._conf['ldap_username_attrib']][0] for x in r if x[1].has_key(self._conf['ldap_username_attrib'])]
-        
-        
+        try:
+            r = self._ldap_search(q, attrlist=[str(self._conf['ldap_username_attrib'])])
+        except LDAPError, e:
+            print(e)
+            return []
+        except Exception, e:
+            print e
+            return []
+        # return a list of usernames
+        return [ x[1][self._conf['ldap_username_attrib']][0].lower()
+                    for x in r if x[1].has_key(self._conf['ldap_username_attrib']) ]
+
     def check_user(self, username):
         u = self._get_ldapuser(username)
         return u is not None
@@ -745,12 +757,12 @@ class LdapAuth(AuthMethod):
             return False
 
         # try to bind with that DN
-        try: 
+        try:
             conn = ldap.initialize(uri=self._conf['ldap_uri'])
             conn.simple_bind_s(userdn, password)
             conn.unbind_s()
             return True
-        except ldap.INVALID_CREDENTIALS: 
+        except ldap.INVALID_CREDENTIALS:
             return False
 
     def get_attrib(self, username, attrib):
@@ -759,5 +771,5 @@ class LdapAuth(AuthMethod):
 
         u = self._get_ldapuser(username)
         if u is not None:
-            a = u[1][attrib][0] #if u[1].has_key(attrib) else ''  
+            a = u[1][attrib][0] #if u[1].has_key(attrib) else ''
             return a
