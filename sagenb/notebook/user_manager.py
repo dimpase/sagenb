@@ -724,14 +724,14 @@ class LdapAuth(AuthMethod):
         from ldap.filter import filter_format
         from ldap import LDAPError
         # build a ldap OR query
-        q = ''.join((
+        q = u''.join((
             filter_format("(%s=*%s*)", [a, search])
                 for a in self._conf['ldap_lookup_attribs']
         ))
         q = q.join(('(|', ')'))
 
         try:
-            r = self._ldap_search(q, attrlist=[str(self._conf['ldap_username_attrib'])])
+            r = self._ldap_search(q.encode('utf8'), attrlist=[str(self._conf['ldap_username_attrib'])])
         except LDAPError, e:
             print(e)
             return []
